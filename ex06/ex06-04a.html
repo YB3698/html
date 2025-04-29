@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root { /* css 변수선언 */
+            --img1: 200px;
+            --img1h: 100px;
+        }
+        body {
+            border: 1px solid black;
+        }
+        div { 
+            /* text-align: center; */
+        }
+        img {
+            position: relative;
+            left: calc(50% - var(--img1h));  /*left사용하려면 position써줘야됨. 단, static은 안됨*/
+            /* calc는 계산함수. 왼쪽으로 50%가고 img1h값만큼 왼쪽으로 빼라는 의미 */
+            width: var(--img1); /* 위에서 사용한 변수 var(선언한 변수명)으로 불러줌 */
+        }
+    </style>
+</head>
+<body>
+    <p><a href="../index.html">🏠홈으로</a></p>
+    <div>
+        <img 
+            src="https://mblogthumb-phinf.pstatic.net/MjAyMTEyMjJfNDcg/MDAxNjQwMTUwOTUzODg2.ywMUl6KPyDdljDTufa1npucGWF5Wyl41Q9NhFyM0Xdog.ntOsJiNdGgz7Hd8VQxk1w7onoPz6ztcDPvsie3hsrzog.JPEG.41minit/1640142789090.jpg?type=w800" 
+            alt="강아지">
+    </div>
+</body>
+</html>
