@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background-color: rgb(247, 237, 248);
+        }
+        header,
+        footer {
+            flex: 2;
+            background-color: rgb(84, 201, 99);
+            text-align: center;
+            font-size: 3rem;
+        }
+        nav {
+            flex: 1;
+            background-color: rgb(255, 215, 0);
+        }
+        article {
+            background-color: rgb(248, 213, 239);
+        }
+        main {
+            flex: 12;
+            display: flex;
+        }
+        aside,
+        section {
+            flex: 1;
+        }
+        article {
+            flex: 3;
+        }
+        footer {
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <p><a href="../index.html">🏠홈으로</a></p>
+    <div class="wrap">
+        <header>Never</header>
+        <nav>nav</nav>
+        <main>
+            <aside>aside</aside>
+            <article>article</article>
+            <section>section</section>
+        </main>
+        <footer>정보처리방침 정책 고객센터 Never corp.</footer>
+    </div>
+</body>
+</html>
