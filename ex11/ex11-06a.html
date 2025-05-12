@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      table {
+        box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+        margin: auto;
+      }
+      th,
+      tr,
+      td {
+        padding: 5px 10px;
+        background-color: rgb(255, 246, 242);
+      }
+      tr:nth-of-type(even) td {
+        background-color: rgb(214, 233, 241);
+      }
+    </style>
+    <script>
+        const inp = prompt("출력하고 싶은 구구단 숫자를 입력해주세요.");
+        const list =`<table>
+            <tr>
+                <td>${inp} x 1</td>
+                <td>${inp*1}</td>
+            </tr>
+            <tr>
+                <td>${inp} x 2</td>
+                <td>${inp*2}</td>
+            </tr>
+            <tr>
+                <td>${inp} x 3</td>
+                <td>${inp*3}</td>
+            </tr>
+            <tr>
+                <td>${inp} x 4</td>
+                <td>${inp*4}</td>
+            </tr>
+            <tr>
+                <td>${inp} x 5</td>
+                <td>${inp*5}</td>
+            </tr>
+            <tr>
+                <td>${inp} x 6</td>
+                <td>${inp*6}</td>
+            </tr>
+            <tr>
+                <td>${inp} x 7</td>
+                <td>${inp*7}</td>
+            </tr>
+            <tr>
+                <td>${inp} x 8</td>
+                <td>${inp*8}</td>
+            </tr>
+            <tr>
+                <td>${inp} x 9</td>
+                <td>${inp*9}</td>
+            </tr>
+        </table>`
+        document.write(list);
+
+    </script>
+</head>
+<body>
+    <p><a href="../index.html">🏠홈으로</a></p>
+</body>
+</html>

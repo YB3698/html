@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      table {
+        box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+        margin: auto;
+      }
+      th,
+      tr,
+      td {
+        padding: 5px 10px;
+        background-color: rgb(255, 246, 242);
+      }
+      tr:nth-of-type(even) td {
+        background-color: rgb(214, 233, 241);
+      }
+      h2 {
+        text-align: center;
+      }
+      th {
+        background-color: rgb(70, 94, 228);
+        color: white;
+      }
+      td:nth-of-type(3) {
+        color: rgb(99, 99, 255);
+        box-shadow: 0 0 10px;
+      }
+    </style>
+</head>
+<body>
+    <p><a href="../index.html">🏠홈으로</a></p>
+    <ul>
+        <li> Hello 반갑다는 뜻이야!</li>
+        <li> JavaScript로 작성되었어.</li>
+    </ul>
+    <h2>&& and</h2>
+    <script>
+        const andtb = `<table>
+            <tr>
+                <th>좌변</th>
+                <th>우변</th>
+                <th>결과</th>
+            </tr>
+            <tr>
+                <td>false</td>
+                <td>false</td>
+                <td>${false&&false}</td>
+            </tr>
+            <tr>
+                <td>true</td>
+                <td>false</td>
+                <td>${true&&false}</td>
+            </tr>
+            <tr>
+                <td>false</td>
+                <td>true</td>
+                <td>${false&&true}</td>
+            </tr>
+            <tr>
+                <td>true</td>
+                <td>true</td>
+                <td>${true&&true}</td>
+            </tr>
+        </table>`
+        document.write(andtb)
+    </script>
+    <h2>|| or</h2>
+    <script>
+        const ortb = `<table>
+            <tr>
+                <th>좌변</th>
+                <th>우변</th>
+                <th>결과</th>
+            </tr>
+            <tr>
+                <td>false</td>
+                <td>false</td>
+                <td>${false||false}</td>
+            </tr>
+            <tr>
+                <td>true</td>
+                <td>false</td>
+                <td>${true||false}</td>
+            </tr>
+            <tr>
+                <td>false</td>
+                <td>true</td>
+                <td>${false||true}</td>
+            </tr>
+            <tr>
+                <td>true</td>
+                <td>true</td>
+                <td>${true||true}</td>
+            </tr>
+        </table>`
+        document.write(ortb)
+    </script>
+</body>
+</html>

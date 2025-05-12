@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      tr,
+      td {
+        border: 1px solid blue;
+      }
+    </style>
+    <script>
+      const inp = prompt("원하는 값을 입력하세요.");
+      const list = `<table>
+        <tr>
+          <td>원가:</td>
+          <td>${inp}원</td>
+        </tr>
+        <tr>
+          <td>10%할인</td>
+          <td>${inp * 0.9}원</td>
+        </tr>
+        <tr>
+          <td>20%할인</td>
+          <td>${inp * 0.8}원</td>
+        </tr>
+        <tr>
+          <td>30%할인</td>
+          <td>${inp * 0.7}원</td>
+        </tr>
+      </table>`;
+        document.write(list);
+    </script>
+  </head>
+  <body>
+    <p><a href="../index.html">🏠홈으로</a></p>
+  </body>
+</html>
