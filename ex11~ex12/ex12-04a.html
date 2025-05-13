@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const year = Number(prompt("태어난 년도를 입력하세요."));
+        if (year <= 2006) {
+            document.write("당신은 성인입니다. 건강한 생활을 하세요.")
+            console.log("당신은 성인입니다. 건강한 생활을 하세요.")
+        } else if (2006 < year) {
+            document.write("당신은 미성년자입니다. 집으로 가세요.")
+            console.log("당신은 미성년자입니다. 집으로 가세요.")
+        } else if(2006 === year) {
+            document.write("이제 성인에 접어드셨군요. 축하합니다.")
+            console.log("이제 성인에 접어드셨군요. 축하합니다.")
+        } else {
+            document.write("년도를 잘못입력하셨습니다. 다시 입력해주세요.")
+            console.log("년도를 잘못입력하셨습니다. 다시 입력해주세요.")
+        }
+    </script>
+</head>
+<body>
+    <p><a href="../index.html">🏠홈으로</a></p>
+</body>
+</html>

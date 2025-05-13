@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let a = (b = c = d = e = f = g = 10);
+        let aa, bb, cc, dd, ee, ff, gg;
+        console.log(a, b, c, d, e, f, g);
+        console.log(aa, ~~bb, !!cc, Number(dd), ee, ff, gg);
+        const test = Number(dd);
+        console.log(test, typeof test);
+        console.log(Number("안녕"));
+        console.log(0 / 0);
+        console.log(Math, sqrt(-1));
+        console.log(test === test);
+        console.log(undefined === undefined);
+        console.log(NaN == NaN);
+        if (test === NaN) {
+            console.log("not a number를 발견했다!!");
+        }
+        /* 막줄 핵심 */
+        if (Number.isNaN(test)) {
+            console.log("not a number를 발견했다!!");
+        }
+    </script>
+</head>
+<body>
+    <p><a href="../index.html">🏠홈으로</a></p>
+</body>
+</html>

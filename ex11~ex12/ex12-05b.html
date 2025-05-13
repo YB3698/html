@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <style>
+    h1 {
+      text-align: center;
+      /* 애니메이션 지정 */
+      animation: mymove 2s ease-out;
+    }
+
+    @keyframes mymove {
+      from {
+        transform: translateY(-100px); /* 처음에는 위쪽에 있음 */
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0); /* 제자리로 */
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <p><a href="../index.html">🏠홈으로</a></p>
+  <h1>안녕하세요.</h1>
+</body>
+</html>

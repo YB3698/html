@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const x = Number(prompt("점수를 입력해주세요."));
+        if (x === 100) {
+            alert("A++ 입니다."); // 알림창 띄워줌
+            console.log("A++ 입니다."); // 콘솔창에 적힘
+        } else if (90 <= x && x < 100) {
+            alert("A 입니다.");
+            console.log("A 입니다.");
+        } else if (80 <= x && x < 90) {
+            alert("B 입니다.");
+            console.log("B 입니다.");
+        } else if (70 <= x && x < 80) {
+            alert("C 입니다.");
+            console.log("C 입니다.");
+        } else if (60 <= x && x < 70) {
+            alert("D 입니다.");
+            console.log("D 입니다.");
+        } else if (x < 60) {
+            alert("F 입니다.");
+            console.log("F 입니다.");
+        } else {
+            alert("점수를 잘못 입력하셨습니다.");
+            console.log("점수를 잘못 입력하셨습니다.");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
