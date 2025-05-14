@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <style>
+        div {
+            background: url("https://cdn.kids.donga.com/news/photo/202111/154786_236936_3707.jpg");
+        }
+        .die {
+            background: url("https://pds.joongang.co.kr//news/component/htmlphoto_mmdata/201805/19/f594dff7-6b0d-4064-8fab-78bdfc777408.jpg");
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const now = dayjs();
+        const random = now.get("ms") % 2;
+        console.log(random);
+
+        if (random == 0) {
+            document.body.innerHTML = `<div class=""></div>`;    
+        } else {
+            document.body.innerHTML = `<div class="die"></div>`;  
+        } 
+    </script>
+    <p><a href="../index.html">🏠홈으로</a></p>
+</body>
+</html>
