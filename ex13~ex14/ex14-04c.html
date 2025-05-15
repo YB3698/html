@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th {
+            background-color: bisque;
+        }
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const arr = ['딸기', '바나나', '사과', '수박', '배', '키위', '복숭아', '포도'];
+        
+        console.log(arr);
+        const inp1 = prompt(`${arr} 중 제거하고 싶은 품목을 입력하세요.`);
+        const inp2 = prompt(`${arr} 중 추가하고 싶은 품목을 입력하세요.`);
+        const x = arr.indexOf(inp1);
+        let li = "<h1>과일 바구니🧺</h1>"
+        li += "<table><tr><th>원래 바구니</th>";
+            for (i=0; i < arr.length; i++) {
+                li += `<td>${arr[i]}</td>`
+            }
+        li += "</table>"
+        document.body.innerHTML = li;
+        if (x !== -1) {
+            arr.splice(x, 1);
+            console.log(`${inp1}제거 완료!\n품목 : ${arr}`);
+        } else {
+            alert(`${x}는 품목에 없는 과일입니다.`);
+        };
+        arr.push(inp2);
+        console.log(`${inp2} 추가 완료!\n품목:${arr}`);
+        let li2 = "<table><tr><th>최종 바구니</th>"; 
+            for (i=0; i < arr.length; i++) {
+                li2 += `<td>${arr[i]}</td>`
+            }
+        li2 += "</table>"
+        document.body.innerHTML = li+li2;
+        </script>
+        <p><a href="../index.html">🏠홈으로</a></p>
+</body>
+</html>

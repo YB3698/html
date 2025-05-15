@@ -19,21 +19,22 @@
     </style>
 </head>
 <body>
-    <p><a href="../index.html">🏠홈으로</a></p>
     <script>
         const count = Number(prompt("한줄에 몇명 앉을래?"));
         const total = Number(prompt("총 인원 몇명?"));
         let list = `<h2>자리배치도</h2>`
         list += "<table>";
-        for (let i = 0; i < total;) {
-            list += "<tr>";
-            for (let j = 0; j < count; j++) {
-            list += `<td>좌석${j+1}</td>`;
-            i += 1;
-        } 
-        list += "</tr>"
-    }
-        document.body.innerHTML = list;
-    </script>
+            for (let i = 0; i < total;) {
+                list += "<tr>";
+                    for (let j = 0; j < count; j++) {
+                        if (i >= total) break;
+                        list += `<td>좌석${i+1}</td>`;
+                        i += 1;
+                    } 
+                    list += "</tr>"
+                }
+                document.body.innerHTML = list;
+                </script>
+    <p><a href="../index.html">🏠홈으로</a></p>
 </body>
 </html>
