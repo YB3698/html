@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머 응용</title>
+</head>
+<body>
+    <a href="../index.html">🏠홈으로</a><hr>
+    <button>재귀 타이머 동작</button>
+    <button>재귀 타이머 정지</button>
+    <button>화면 지우기</button>
+    <div></div>
+    <script>
+        const btns = document.querySelector("button");
+        const div = document.querySelector("div");
+        /* 무한반복 - 타이머 응용 재귀함수 사용 */
+        let timeId = null;
+        let num = 0;
+        const fn1 = () => {
+            setTimeout(() => {
+                div.innerHtml += `${++num} 반복중...<br>`;
+                fn1(); // 내부에서 자기를 호출
+        }, 1000);
+        };
+        const stopTimer = () => {
+            num = 0; //초기화 시키기(없으면 누적됨)
+            clearTimeout(timeId);
+        }
+        const clearDoc = () => (div.innerHTML = "");
+        btns[0].addEventListener("click", fn1);
+        btns[1].addEventListener("click", stopTimer);
+        btns[2].addEventListener("click", clearDoc);
+        fn1();
+    </script>
+</body>
+</html>

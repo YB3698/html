@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="../index.html">🏠홈으로</a><hr>
+    <button>주기 타이머 동작</button>
+    <button>주기 타이머 정지</button>
+    <button>가짜버튼1</button>
+    <button>가짜버튼2</button>
+    <script>
+        const btn = document.querySelector("button");
+        const div = document.querySelector("div");
+        cosole.log(btn[0], typeof btn, Array.isArray(btn));
+        const timeOn = () => {
+            timeId = setInterval(() => {
+                list += "계속진행중...<br>";
+                document.write(list);
+            }, 1000);
+        };
+        const timeOff = () => {
+            clearInterval(timeId);
+        };
+        const clearDoc = () => (div.innerHTML = "");
+        btn[0].addEventListener("click", timeOn);
+        btn[1].addEventListener("click", timeOff);
+        btn[2].addEventListener("click", clearDoc);
+        btn[3].addEventListener("click", () => alert("가짜버튼1"));
+        btn[4].addEventListener("click", () => console.log("가짜버튼2"));
+
+        /* 유사배열을 진짜 배열로 바꾸기 */
+        const realArray = Array from(btn);
+    </script>
+</body>
+</html>

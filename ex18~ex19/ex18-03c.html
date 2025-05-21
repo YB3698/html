@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바늘시계</title>
+    <style>
+        .clock {
+            border: 3px solid rgb(218, 231, 26);
+            height: 500px;
+            width: 500px;
+            border-radius: 50%;
+            position: relative;
+            margin: auto;
+            background-image: url("https://mblogthumb-phinf.pstatic.net/MjAyMDAxMTRfMTU0/MDAxNTc4OTc1MjYyNzc0.WSt0FKf_UV9MnF9WZTC9WT5LfR-mlcMikYv2uKc0_Gcg.DyPKkxsAsyOucrUOrgyRyrLKbKC11c45XHmXlZEkjHcg.JPEG.o8o8o8486/1578975261638.jpg?type=w800");
+            background-position: center;
+            background-size: cover;
+        }
+        .needle {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom center;
+            transform: rotate(0deg);
+        }
+        .hour {
+            height: 120px;
+            width: 15px;
+            background-color: yellow;
+        }
+        .min {
+            height: 180px;
+            width: 10px;
+            background-color: aqua;
+        }
+        .sec {
+            height: 208px;
+            width: 6px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html">🏠홈으로</a><hr>
+    <div class="time"></div>
+    <div class="clock">
+        <div class="needle"></div>
+        <div class="needle hour"></div>
+        <div class="needle min"></div>
+        <div class="needle sec"></div>
+    </div>
+    <script>
+        const time1 = () => {
+            const now = new Date();
+            const hour = now.getHours();
+            const min = now.getMinutes();
+            const sec = now.getSeconds();
+            const time = document.querySelector('.time');
+
+            const hourDeg = (hour%12)*30+(min*0.5);
+            const minDeg = min*6;
+            const secDeg = sec*6;
+            document.querySelector('.time').innerHTML = `<h2>${hour}시 ${min}분 ${sec}초</h2>`;
+
+            document.querySelector('.hour').style.transform = `rotate(${hourDeg}deg)`;
+            document.querySelector('.min').style.transform = `rotate(${minDeg}deg)`;
+            document.querySelector('.sec').style.transform = `rotate(${secDeg}deg)`;
+        };
+        setInterval(time1, 1000);
+    </script>
+</body>
+</html>
