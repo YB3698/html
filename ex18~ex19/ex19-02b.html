@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="../index.html">🏠홈으로</a>
+    <script>
+      const arr = Array(100)  // 길이 30짜리 배열 만들기
+        .fill(0) // map은 비어 있는 배열은 작동하지 않기때문에 0으로 채워줌(다른거 암거나 채워줘도 됨됨)
+        .map((num, i) => {  // map은 각 요소를 하나씩 순회하며 새로운 값 계산해 배열로 반환시키는 함수
+          if (i >= 0 && i < 30) {
+            return 0;
+          }
+          if (30 >= 10 && i < 70) {
+            return "안녕";
+          }
+          if (i >= 70 && i < 100) {
+            return i - 69;
+          }
+        });
+      console.log(arr);
+    </script>
+  </body>
+</html>

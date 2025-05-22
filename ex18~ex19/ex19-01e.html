@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const h2 = (text) => `<h2>${text}</h2>`;
+    </script>
+</head>
+<body>
+    <a href="../index.html">🏠홈으로</a>
+    <script>
+        document.body.innerHTML += h2("script 태그");
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.innerHTML += h2("=== DOMContentLoaded 이벤트 발생 ===");
+            document.body.innerHTML += h2("1번째 script로 작성된 h2태그");
+        });
+    </script>
+    <h2>1번째 h2 태그</h2>
+    <script>
+        document.body.innerHTML += h2("script태그");
+    </script>
+    <h2>2번째 h2 태그</h2>
+</body>
+</html>
