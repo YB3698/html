@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pyb 포트폴리오</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pretendard&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Pretendard", sans-serif;
+      }
+      body {
+        line-height: 1.6;
+        color: #333;
+        background: #f9f9f9;
+      }
+      header,
+      section {
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+      header {
+        background: #333;
+        color: white;
+        text-align: center;
+      }
+      header h1 {
+        font-size: 3rem;
+      }
+      header p {
+        font-size: 1.2rem;
+        margin-top: 10px;
+      }
+      .section-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        border-left: 5px solid #333;
+        padding-left: 10px;
+      }
+      .skills,
+      .projects {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .skill-item,
+      .project-item {
+        flex: 1 1 200px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .contact {
+        text-align: center;
+        background: #eee;
+      }
+      .contact p {
+        margin: 10px 0;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9rem;
+        background: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>pyb</h1>
+      <p>백엔드 개발자 지망생입니다.</p>
+    </header>
+
+    <section>
+      <h2 class="section-title">기술 스택</h2>
+      <div class="skills">
+        <div class="skill-item">HTML</div>
+        <div class="skill-item">CSS</div>
+        <div class="skill-item">JavaScript</div>
+        <div class="skill-item">Python</div>
+        <div class="skill-item">SQL</div>
+        <div class="skill-item">GitHub</div>
+        <div class="skill-item">Java</div>
+        <div class="skill-item">DBeaver</div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">프로젝트</h2>
+      <div class="projects">
+        <div class="project-item">
+          <h3>카페 키오스크</h3>
+          <p>Python과 Oracle DB를 활용한 키오스크 시스템 구현</p>
+          <p>UI: Qt Designer / 기능: 주문, 관리자 모드, DB 연동</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2 class="section-title">Contact</h2>
+      <p><i class="fa-solid fa-phone"></i> 010-0000-0000</p>
+    </section>
+
+    <footer>&copy; 2025 pyb. All rights reserved.</footer>
+  </body>
+</html>

@@ -2,32 +2,41 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- 한글 인코딩 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 모바일 환경 대응 -->
     <title>나의 포트폴리오</title>
+    <!-- 브라우저 탭 제목 -->
     <style>
+      /* 전체 body 기본 스타일 */
       body {
         margin: 0;
         padding: 0;
-        height: 390vh;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
+
+      /* 각 section 영역 공통 스타일 */
       section {
         width: 100%;
-        height: 95vh;
-        flex-wrap: wrap;
+        height: 95vh; /* 화면 높이의 95% 높이로 고정 */
+        overflow-y: auto; /* 내용이 넘치면 섹션 안에서 스크롤 가능 */
+        flex-wrap: wrap; /**/
         display: flex;
         justify-content: center;
         align-items: center;
-        /* font-size: 2.5rem; */
         color: #444;
         background-color: #f8f6f0;
         text-align: center;
         padding: 20px;
       }
+
+      /* 짝수 번째 section 배경색 변경 */
       section:nth-of-type(even) {
         background-color: #e1f0ff;
         color: #2d5c7f;
       }
+
+      /* 상단 중앙 고정 텍스트 (스크롤 안내) */
       .scroll-text {
         position: fixed;
         top: 30px;
@@ -41,6 +50,8 @@
         border-radius: 20px;
         z-index: 999;
       }
+
+      /* 왼쪽/오른쪽 고정 메뉴 기본 설정 */
       .left-menu,
       .right-menu {
         position: fixed;
@@ -48,53 +59,85 @@
         color: white;
         padding: 20px;
         border-radius: 10px;
-        opacity: 0;
+        opacity: 0; /* 처음엔 안 보이게 */
         transition: 0.5s ease;
         top: 100px;
       }
+
+      /* 왼쪽 메뉴 위치 및 배경색 */
       .left-menu {
         left: -300px;
-        background-color: rgba(65, 105, 225, 0.7);
+        background-color: rgba(65, 105, 225, 0.7); /* 반투명 파랑 */
         width: 200px;
       }
+
+      /* 왼쪽 메뉴 위치 변경 스타일 (프로젝트 영역용) */
       .left-menu2 {
         top: 500px;
-        background-color: rgba(34, 139, 34, 0.7);
+        background-color: rgba(34, 139, 34, 0.7); /* 반투명 초록 */
         width: 300px;
       }
+
+      /* 오른쪽 메뉴 위치 및 배경 */
       .right-menu {
         width: 250px;
         right: -300px;
-        background-color: rgba(255, 140, 0, 0.7);
+        background-color: rgba(255, 140, 0, 0.7); /* 반투명 주황 */
       }
+
+      /* 마지막 안내 박스 wrapper */
       .end-line {
         display: flex;
         justify-content: center;
       }
+
+      /* 마지막에 나오는 안내 메뉴 박스 */
       .end-menu {
         position: fixed;
         font-size: 2rem;
         top: 90%;
         color: white;
-        background-color: rgb(255, 99, 132);
+        background-color: rgb(255, 99, 132); /* 분홍색 배경 */
         padding: 20px;
         border-radius: 10px;
         text-align: center;
         height: 50px;
         width: 22%;
         transition: 0.5s ease;
-        opacity: 0;
+        opacity: 0; /* 처음엔 안 보이게 */
       }
-      .show-end { opacity: 1; width: 100%; }
-      .show-left { left: 10px; opacity: 1; }
-      .show-right { right: 10px; opacity: 1; }
+
+      /* 마지막 안내 박스 보일 때 */
+      .show-end {
+        opacity: 1;
+        width: 100%;
+      }
+
+      /* 왼쪽 메뉴 보이게 설정 */
+      .show-left {
+        left: 10px;
+        opacity: 1;
+      }
+
+      /* 오른쪽 메뉴 보이게 설정 */
+      .show-right {
+        right: 10px;
+        opacity: 1;
+      }
     </style>
   </head>
   <body>
-    <div class="scroll-text" id="scrollText">환영합니다. 아래로 스크롤 해보세요!</div>
+    <!-- 상단 고정 안내 텍스트 -->
+    <div class="scroll-text" id="scrollText">
+      환영합니다. 아래로 스크롤 해보세요!
+    </div>
 
+    <!-- 왼쪽 고정 메뉴 -->
     <div class="left-menu" id="leftMenu"></div>
-    <div class="right-menu" id="rightMenu">💡 포트폴리오 메뉴
+
+    <!-- 오른쪽 고정 메뉴 -->
+    <div class="right-menu" id="rightMenu">
+      💡 포트폴리오 메뉴
       <ul>
         <li>1. 소개</li>
         <li>2. 기술</li>
@@ -103,23 +146,40 @@
       </ul>
     </div>
 
+    <!-- 마지막 안내 박스 -->
     <div class="end-line">
-      <div class="end-menu" id="endMenu">👏 감사합니다! 곧 맨 위로 이동합니다.</div>
+      <div class="end-menu" id="endMenu">
+        👏 감사합니다! 곧 맨 위로 이동합니다.
+      </div>
     </div>
 
+    <!-- 1. 소개 섹션 -->
     <section>
-      <div style="flex: 1 1 200px; max-width: 200px; margin-right: 250px;">
-        <img src="https://play-lh.googleusercontent.com/Sjl2gOMQJ_XcFQS77H-OfnFWFMX_ztNvzv74BjuchkMeshdKBIsoVCtk3Foni-E-K9cN" alt="내사진" style="width: 100%; border-radius: 20px; box-shadow: 0 40px 10px rgba(0,0,0,0.1);">
-        </div>
-        
-    <div>
-        <h1 style="margin-top: 0; font-size: 2rem;">박유빈</h1>
-        <p><strong>이메일 : dbqls3698@naver.com</strong></p>
-        <p>저는 신입 개발자 박유빈입니다.<br>성장하는 것을 즐기며, 협업과 도전을 좋아합니다.</p>
+      <!-- 왼쪽 사진 영역 -->
+      <div style="flex: 1 1 200px; max-width: 200px; margin-right: 250px">
+        <img
+          src="https://play-lh.googleusercontent.com/Sjl2gOMQJ_XcFQS77H-OfnFWFMX_ztNvzv74BjuchkMeshdKBIsoVCtk3Foni-E-K9cN"
+          alt="내사진"
+          style="
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 40px 10px rgba(0, 0, 0, 0.1);
+          "
+        />
+      </div>
 
-    </div>
+      <!-- 오른쪽 자기소개 -->
+      <div>
+        <h1 style="margin-top: 0; font-size: 2rem">박유빈</h1>
+        <p><strong>이메일 : dbqls3698@naver.com</strong></p>
+        <p>
+          저는 신입 개발자 박유빈입니다.<br />성장하는 것을 즐기며, 협업과
+          도전을 좋아합니다.
+        </p>
+      </div>
     </section>
 
+    <!-- 2. 기술 스택 섹션 -->
     <section>
       <div>
         <h2>🛠️ 기술 스택</h2>
@@ -127,20 +187,31 @@
       </div>
     </section>
 
+    <!-- 3. 프로젝트 섹션 -->
     <section>
       <div>
         <h2>📁 프로젝트</h2>
-        <p>1. 카페 키오스크 UI 개발<br>2. 웹 크롤링 자동화 (스타벅스/오피넷)<br>3. 멀티 DB 연동 CRUD 시스템</p>
+        <p>
+          1. 카페 키오스크 UI 개발<br />
+          2. 웹 크롤링 자동화 (스타벅스/오피넷)<br />
+          3. 멀티 DB 연동 CRUD 시스템
+        </p>
       </div>
     </section>
 
+    <!-- 4. 연락처 섹션 -->
     <section>
       <div>
         <h2>📨 연락처</h2>
-        <p>Email: youremail@example.com<br>GitHub: github.com/yourID<br>Blog: yourblog.tistory.com</p>
+        <p>
+          Email: youremail@example.com<br />
+          GitHub: github.com/yourID<br />
+          Blog: yourblog.tistory.com
+        </p>
       </div>
     </section>
 
+    <!-- 5. 마지막 섹션 -->
     <section>
       <div>
         <h2>🔚 포트폴리오 끝!</h2>
@@ -148,18 +219,20 @@
       </div>
     </section>
 
+    <!-- 스크롤 이벤트에 따라 동작하는 JavaScript -->
     <script>
       const scrollText = document.getElementById("scrollText");
       const leftMenu = document.getElementById("leftMenu");
       const rightMenu = document.getElementById("rightMenu");
       const endMenu = document.getElementById("endMenu");
-      let once = false;
+      let once = false; // 맨 위로 자동 스크롤을 한 번만 실행하기 위한 플래그
 
       window.addEventListener("scroll", () => {
-        const scrollY = window.scrollY;
+        const scrollY = window.scrollY; // 현재 스크롤 위치
         const innerHeight = window.innerHeight;
 
-        if (scrollY < 900) {
+        // 각 스크롤 위치에 따른 상단 안내 텍스트 변경
+        if (scrollY < 800) {
           scrollText.textContent = `📌 소개 섹션입니다.`;
         } else if (scrollY < 1700) {
           scrollText.textContent = `💻 기술 스택 섹션입니다.`;
@@ -171,6 +244,7 @@
           scrollText.textContent = `🧾 마지막 섹션입니다.`;
         }
 
+        // 기술 스택 섹션에 왔을 때 왼쪽 메뉴 등장
         if (scrollY > 500 && scrollY < 1900) {
           leftMenu.classList.add("show-left");
           leftMenu.classList.remove("left-menu2");
@@ -179,12 +253,14 @@
           leftMenu.classList.remove("show-left");
         }
 
+        // 프로젝트 섹션일 때 오른쪽 메뉴 등장
         if (scrollY > 1400 && scrollY < 2600) {
           rightMenu.classList.add("show-right");
         } else {
           rightMenu.classList.remove("show-right");
         }
 
+        // 프로젝트~연락처 사이일 때 왼쪽 메뉴 내용 변경
         if (scrollY > 1900 && scrollY < 3200) {
           leftMenu.classList.add("show-left", "left-menu2");
           leftMenu.innerHTML = `<b>📂 프로젝트 요약</b><ul><li>카페 키오스크</li><li>크롤링 자동화</li></ul>`;
@@ -192,13 +268,14 @@
           leftMenu.classList.remove("show-right");
         }
 
+        // 마지막 영역에서 자동으로 위로 스크롤
         const toTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
         if (scrollY > 3500 && !once) {
-          once = true;
+          once = true; // 한 번만 실행되도록 설정
           scrollText.textContent = `🔝 맨 위로 돌아갑니다!`;
           endMenu.classList.add("show-end");
-          setTimeout(toTop, 2000);
+          setTimeout(toTop, 2000); // 2초 후 위로 스크롤
         } else if (scrollY <= 2800) {
           once = false;
           endMenu.classList.remove("show-end");
